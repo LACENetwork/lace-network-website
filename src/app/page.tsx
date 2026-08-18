@@ -64,7 +64,7 @@ const testimonials: Testimonial[] = [
     tags: ["Workshop", "Progression"],
   },
   {
-    name: "Kian B",
+    name: "Kian B.",
     role: "Aspiring Apprentice",
     stage: "Aspiring Apprentice",
     quote:

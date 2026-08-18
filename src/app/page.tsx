@@ -150,7 +150,7 @@ export default function Home() {
               With You At Every Step
             </h2>
             <p className="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-gold sm:text-base">
-              Before, During. Beyond.
+              Before. During. Beyond.
             </p>
           </Reveal>
 

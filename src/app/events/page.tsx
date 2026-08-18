@@ -3,10 +3,17 @@ import { CaretRight, Clock, MapPin, Users } from "@phosphor-icons/react/dist/ssr
 import { PageHeader } from "@/components/page-header";
 import { RevealGroup, RevealItem } from "@/components/reveal";
 
+const description =
+  "See upcoming LACE Network workshops and networking events for aspiring, current, and alumni apprentices across the UK.";
+
 export const metadata: Metadata = {
   title: "Upcoming Events",
-  description:
-    "See upcoming LACE Network workshops and networking events for aspiring, current, and alumni apprentices across the UK.",
+  description,
+  openGraph: {
+    title: "Upcoming Events | LACE Network",
+    description,
+    images: ["/event-workshop.jpg"],
+  },
 };
 
 function ordinal(day: string) {
@@ -26,6 +33,8 @@ const events = [
     month: "Aug",
     year: "2026",
     time: "2:00 – 5:00 PM",
+    startISO: "2026-08-19T14:00:00+01:00",
+    endISO: "2026-08-19T17:00:00+01:00",
     location: "London",
     format: "In person",
     audience: "Aspiring apprentices",
@@ -41,6 +50,8 @@ const events = [
     month: "Aug",
     year: "2026",
     time: "4:00 – 6:00 PM",
+    startISO: "2026-08-27T16:00:00+01:00",
+    endISO: "2026-08-27T18:00:00+01:00",
     location: "Manchester",
     format: "In person",
     audience: "Aspiring apprentices",
@@ -50,9 +61,43 @@ const events = [
   },
 ];
 
+const eventsJsonLd = events.map((event) => ({
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: event.title,
+  startDate: event.startISO,
+  endDate: event.endISO,
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  location: {
+    "@type": "Place",
+    name: event.location,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: event.location,
+      addressCountry: "GB",
+    },
+  },
+  description: event.description,
+  organizer: {
+    "@type": "Organization",
+    name: "LACE Network",
+    url: "https://www.lacenetwork.com",
+  },
+  offers: {
+    "@type": "Offer",
+    url: event.ticketHref,
+    availability: "https://schema.org/InStock",
+  },
+}));
+
 export default function EventsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventsJsonLd) }}
+      />
       <PageHeader
         title="Upcoming Events"
         titleClassName="text-5xl sm:text-6xl"

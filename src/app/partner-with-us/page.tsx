@@ -4,10 +4,16 @@ import { PartnerForm } from "@/components/partner-form";
 import { Reveal } from "@/components/reveal";
 import { SocialLinks } from "@/components/social-links";
 
+const description =
+  "Schools, colleges, and organisations can get in touch with LACE Network to partner with us on workshops, events, and apprenticeship support.";
+
 export const metadata: Metadata = {
   title: "Contact Us",
-  description:
-    "Schools, colleges, and organisations can get in touch with LACE Network to partner with us on workshops, events, and apprenticeship support.",
+  description,
+  openGraph: {
+    title: "Contact Us | LACE Network",
+    description,
+  },
 };
 
 export default function PartnerWithUsPage() {

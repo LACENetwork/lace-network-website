@@ -11,10 +11,17 @@ import {
 import { PageHeader } from "@/components/page-header";
 import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 
+const description =
+  "LACE Network is the UK-wide network supporting aspiring, current, and alumni apprentices through workshops, events, and community.";
+
 export const metadata: Metadata = {
   title: "About Us",
-  description:
-    "LACE Network is the UK-wide network supporting aspiring, current, and alumni apprentices through workshops, events, and community.",
+  description,
+  openGraph: {
+    title: "About Us | LACE Network",
+    description,
+    images: ["/event-workshop.jpg"],
+  },
 };
 
 const stats = [

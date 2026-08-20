@@ -43,14 +43,14 @@ export function SiteFooter() {
             </div>
             <a
               href="mailto:contact@lacenetwork.com"
-              className="inline-flex items-center gap-2 text-sm font-medium text-bone-soft transition-colors duration-fast hover:text-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm"
+              className="flex items-center gap-2 text-sm font-medium text-bone-soft transition-colors duration-fast hover:text-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm"
             >
               <EnvelopeSimple size={18} className="text-gold" aria-hidden="true" />
               contact@lacenetwork.com
             </a>
             <a
               href="tel:+442045424511"
-              className="inline-flex items-center gap-2 text-sm font-medium text-bone-soft transition-colors duration-fast hover:text-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm"
+              className="flex items-center gap-2 text-sm font-medium text-bone-soft transition-colors duration-fast hover:text-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm"
             >
               <Phone size={18} className="text-gold" aria-hidden="true" />
               020 4542 4511

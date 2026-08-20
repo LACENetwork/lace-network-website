@@ -26,23 +26,6 @@ function ordinal(day: string) {
 
 const events = [
   {
-    title: "LACE Network x Cisco: Apprenticeship & CV Insight Workshop",
-    weekday: "Wednesday",
-    weekdayShort: "Wed",
-    day: "19",
-    month: "Aug",
-    year: "2026",
-    time: "2:00 – 5:00 PM",
-    startISO: "2026-08-19T14:00:00+01:00",
-    endISO: "2026-08-19T17:00:00+01:00",
-    location: "London",
-    format: "In person",
-    audience: "Aspiring apprentices",
-    description:
-      "An interactive workshop covering apprenticeship insights, CV guidance and practical tips to help students strengthen their applications.",
-    ticketHref: "https://www.eventbrite.com/e/1996216918540?aff=oddtdtcreator",
-  },
-  {
     title: "LACE Network x Weightmans: Apprenticeship Launchpad Workshop",
     weekday: "Thursday",
     weekdayShort: "Thu",

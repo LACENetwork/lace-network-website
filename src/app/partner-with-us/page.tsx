@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
+import { EnvelopeSimple, Phone } from "@phosphor-icons/react/dist/ssr";
 import { PartnerForm } from "@/components/partner-form";
 import { Reveal } from "@/components/reveal";
 import { SocialLinks } from "@/components/social-links";
@@ -39,7 +39,7 @@ export default function PartnerWithUsPage() {
               may have.
             </p>
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-10">
               <a
                 href="mailto:contact@lacenetwork.com"
                 className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-void rounded-sm"
@@ -53,6 +53,23 @@ export default function PartnerWithUsPage() {
                   </span>
                   <span className="block text-sm font-medium text-bone transition-colors duration-fast hover:text-gold">
                     contact@lacenetwork.com
+                  </span>
+                </span>
+              </a>
+
+              <a
+                href="tel:+442045424511"
+                className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-void rounded-sm"
+              >
+                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-brass/30 bg-charcoal text-gold">
+                  <Phone size={20} aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="block text-xs font-semibold uppercase tracking-[0.15em] text-bone-soft">
+                    Phone
+                  </span>
+                  <span className="block text-sm font-medium text-bone transition-colors duration-fast hover:text-gold">
+                    020 4542 4511
                   </span>
                 </span>
               </a>

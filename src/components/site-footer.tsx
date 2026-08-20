@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { EnvelopeSimple, MapPin } from "@phosphor-icons/react/dist/ssr";
+import { EnvelopeSimple, MapPin, Phone } from "@phosphor-icons/react/dist/ssr";
 import { Logo } from "@/components/logo";
 import { SocialLinks } from "@/components/social-links";
 
@@ -47,6 +47,13 @@ export function SiteFooter() {
             >
               <EnvelopeSimple size={18} className="text-gold" aria-hidden="true" />
               contact@lacenetwork.com
+            </a>
+            <a
+              href="tel:+442045424511"
+              className="inline-flex items-center gap-2 text-sm font-medium text-bone-soft transition-colors duration-fast hover:text-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm"
+            >
+              <Phone size={18} className="text-gold" aria-hidden="true" />
+              020 4542 4511
             </a>
           </div>
         </div>

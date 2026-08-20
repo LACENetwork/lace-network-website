@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   },
 };
 
+// Always check against the real current date rather than a cached build.
+export const dynamic = "force-dynamic";
+
 function ordinal(day: string) {
   const n = Number(day);
   if (n % 10 === 1 && n % 100 !== 11) return `${day}st`;
@@ -24,7 +27,19 @@ function ordinal(day: string) {
   return `${day}th`;
 }
 
-const events = [
+const monthIndex: Record<string, number> = {
+  Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+  Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+};
+
+function isUpcoming(event: { day: string; month: string; year: string }) {
+  const eventDate = new Date(Number(event.year), monthIndex[event.month], Number(event.day));
+  const cutoff = new Date(eventDate);
+  cutoff.setDate(cutoff.getDate() + 1);
+  return new Date() < cutoff;
+}
+
+const allEvents = [
   {
     title: "LACE Network x Weightmans: Apprenticeship Launchpad Workshop",
     weekday: "Thursday",
@@ -43,6 +58,8 @@ const events = [
     ticketHref: "https://www.eventbrite.com/e/1996115888356?aff=oddtdtcreator",
   },
 ];
+
+const events = allEvents.filter(isUpcoming);
 
 const eventsJsonLd = events.map((event) => ({
   "@context": "https://schema.org",

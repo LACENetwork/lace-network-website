@@ -56,6 +56,7 @@ const allEvents = [
     description:
       "Explore the apprenticeship journey, from navigating applications to understanding what employers look for and approaching the application process with confidence.",
     ticketHref: "https://www.eventbrite.com/e/1996115888356?aff=oddtdtcreator",
+    soldOut: true,
   },
 ];
 
@@ -87,7 +88,9 @@ const eventsJsonLd = events.map((event) => ({
   offers: {
     "@type": "Offer",
     url: event.ticketHref,
-    availability: "https://schema.org/InStock",
+    availability: event.soldOut
+      ? "https://schema.org/SoldOut"
+      : "https://schema.org/InStock",
   },
 }));
 
@@ -112,6 +115,11 @@ export default function EventsPage() {
               key={event.title}
               className="overflow-hidden rounded-2xl border border-line-brass/30 bg-charcoal transition-colors duration-base hover:border-gold/60"
             >
+              {event.soldOut && (
+                <div className="bg-gold py-2 text-center text-xs font-bold uppercase tracking-[0.3em] text-void">
+                  Sold Out
+                </div>
+              )}
               <div className="flex items-center justify-center gap-4 border-b border-line-brass/30 bg-void py-8">
                 <div className="text-center">
                   <p className="font-wordmark text-5xl font-bold text-bone">
@@ -158,15 +166,21 @@ export default function EventsPage() {
                   {event.description}
                 </p>
 
-                <a
-                  href={event.ticketHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-[0.1em] text-gold transition-colors duration-fast hover:text-gold-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal rounded-sm"
-                >
-                  Get Your Tickets
-                  <CaretRight size={16} weight="bold" aria-hidden="true" />
-                </a>
+                {event.soldOut ? (
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-[0.1em] text-bone-soft">
+                    Sold Out
+                  </span>
+                ) : (
+                  <a
+                    href={event.ticketHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-[0.1em] text-gold transition-colors duration-fast hover:text-gold-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal rounded-sm"
+                  >
+                    Get Your Tickets
+                    <CaretRight size={16} weight="bold" aria-hidden="true" />
+                  </a>
+                )}
               </div>
             </RevealItem>
           ))}

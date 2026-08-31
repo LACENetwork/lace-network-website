@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: "800+", label: "Apprentice members" },
+  { value: "1,000+", label: "Apprentice members" },
   { value: "10,000+", label: "Students impacted" },
   { value: "100+", label: "Events hosted" },
 ];

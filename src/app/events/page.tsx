@@ -115,8 +115,8 @@ export default function EventsPage() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 grid grid-cols-3 gap-1 opacity-45"
         >
-          {heroCollage.map((src, i) => (
-            <div key={src} className={`relative ${i >= 3 ? "hidden sm:block" : ""}`}>
+          {heroCollage.map((src) => (
+            <div key={src} className="relative">
               <Image
                 src={src}
                 alt=""

@@ -7,7 +7,7 @@ import { SocialLinks } from "@/components/social-links";
 const footerNav = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Upcoming Events", href: "/events" },
+  { label: "Events", href: "/events" },
   { label: "Contact Us", href: "/partner-with-us" },
 ];
 

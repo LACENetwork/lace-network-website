@@ -42,9 +42,9 @@ export default function PartnerWithUsPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-10">
               <a
                 href="mailto:contact@lacenetwork.com"
-                className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-void rounded-sm"
+                className="flex items-center gap-3 rounded-xl border border-gold/50 bg-charcoal py-3 pl-3 pr-6 transition-colors duration-fast hover:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-void"
               >
-                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-brass/30 bg-charcoal text-gold">
+                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-void text-gold">
                   <EnvelopeSimple size={20} aria-hidden="true" />
                 </span>
                 <span>
@@ -59,9 +59,9 @@ export default function PartnerWithUsPage() {
 
               <a
                 href="tel:+442045424511"
-                className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-void rounded-sm"
+                className="flex items-center gap-3 rounded-xl border border-gold/50 bg-charcoal py-3 pl-3 pr-6 transition-colors duration-fast hover:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-void"
               >
-                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-brass/30 bg-charcoal text-gold">
+                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-void text-gold">
                   <Phone size={20} aria-hidden="true" />
                 </span>
                 <span>

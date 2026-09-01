@@ -50,10 +50,10 @@ export function SiteHeader() {
         </nav>
 
         <Link
-          href="/events"
+          href="/partner-with-us"
           className="hidden md:inline-flex items-center rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-void transition-colors duration-fast hover:bg-gold-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-void"
         >
-          Join an event
+          Get in touch
         </Link>
 
         <button
@@ -94,11 +94,11 @@ export function SiteHeader() {
             })}
             <li className="mt-2">
               <Link
-                href="/events"
+                href="/partner-with-us"
                 onClick={() => setOpen(false)}
                 className="flex min-h-[44px] items-center justify-center rounded-full bg-gold px-5 text-sm font-semibold text-void focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               >
-                Join an event
+                Get in touch
               </Link>
             </li>
           </ul>

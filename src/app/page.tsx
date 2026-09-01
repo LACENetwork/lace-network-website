@@ -3,7 +3,6 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { SocialLinks } from "@/components/social-links";
 import { Hero } from "@/components/hero";
 import { SectionDots } from "@/components/section-dots";
-import { SectionGlow } from "@/components/section-glow";
 import { Testimonials, type Testimonial } from "@/components/testimonials";
 import { MomentsMarquee } from "@/components/moments-marquee";
 
@@ -109,7 +108,6 @@ export default function Home() {
       <Hero />
 
       <section aria-labelledby="what-is-lace" className="relative overflow-hidden mx-auto max-w-6xl px-6 py-20 sm:py-28">
-        <SectionGlow />
         <SectionDots />
         <SectionDots position="bottom" />
         <Reveal className="relative z-10">
@@ -145,8 +143,7 @@ export default function Home() {
       </section>
 
       <section aria-labelledby="moments" className="relative overflow-hidden border-t border-line-brass/20 py-20 sm:py-28">
-        <SectionGlow />
-        <div className="relative mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-6">
           <Reveal className="max-w-2xl">
             <h2 id="moments" className="font-wordmark text-3xl font-bold tracking-tight text-bone sm:text-4xl">
               See Us In Action
@@ -156,13 +153,12 @@ export default function Home() {
             </p>
           </Reveal>
         </div>
-        <div className="relative z-10 mt-12">
+        <div className="mt-12">
           <MomentsMarquee />
         </div>
       </section>
 
       <section aria-labelledby="who-its-for" className="relative overflow-hidden bg-charcoal py-20 sm:py-28">
-        <SectionGlow />
         <SectionDots />
         <SectionDots position="bottom" />
         <div className="relative mx-auto max-w-6xl px-6">
@@ -193,10 +189,9 @@ export default function Home() {
       </section>
 
       <section aria-labelledby="testimonials" className="relative overflow-hidden mx-auto max-w-6xl px-6 py-20 sm:py-28">
-        <SectionGlow />
         <SectionDots />
         <SectionDots position="bottom" />
-        <Reveal className="relative z-10 text-center">
+        <Reveal className="text-center">
           <h2 id="testimonials" className="font-wordmark text-3xl font-bold tracking-tight text-bone sm:text-4xl">
             Testimonials
           </h2>
@@ -205,13 +200,12 @@ export default function Home() {
           </p>
         </Reveal>
 
-        <div className="relative z-10 mt-14">
+        <div className="mt-14">
           <Testimonials testimonials={testimonials} />
         </div>
       </section>
 
       <section aria-labelledby="follow-us" className="relative overflow-hidden border-t border-line-brass/30 bg-charcoal py-20 sm:py-28">
-        <SectionGlow />
         <SectionDots />
         <SectionDots position="bottom" />
         <div className="relative mx-auto max-w-6xl px-6 text-center">

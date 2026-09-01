@@ -4,10 +4,10 @@ import { CaretRight, Clock, MapPin, Users } from "@phosphor-icons/react/dist/ssr
 import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 
 const heroCollage = [
-  "/gallery/collage-05.jpg",
+  "/gallery/collage-04.jpg",
   "/gallery/collage-02.jpg",
   "/gallery/collage-03.jpg",
-  "/gallery/collage-04.jpg",
+  "/gallery/collage-05.jpg",
   "/gallery/collage-01.jpg",
   "/gallery/collage-06.jpg",
 ];

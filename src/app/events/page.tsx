@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CaretRight, Clock, MapPin, Users } from "@phosphor-icons/react/dist/ssr";
-import { PageHeader } from "@/components/page-header";
-import { RevealGroup, RevealItem } from "@/components/reveal";
+import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
+
+const heroCollage = [
+  "/gallery/collage-01.jpg",
+  "/gallery/collage-02.jpg",
+  "/gallery/collage-03.jpg",
+  "/gallery/collage-04.jpg",
+  "/gallery/collage-05.jpg",
+  "/gallery/collage-06.jpg",
+];
 
 const description =
   "See upcoming LACE Network workshops and networking events for aspiring, current, and alumni apprentices across the UK.";
@@ -101,12 +110,44 @@ export default function EventsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventsJsonLd) }}
       />
-      <PageHeader
-        title="Upcoming Events"
-        titleClassName="text-5xl sm:text-6xl"
-        caption="Workshops and networking events, nationwide."
-        description="Join us in person or online. Events are open to whichever apprentice group they're designed for. Check the audience tag on each listing."
-      />
+      <section className="relative overflow-hidden border-b border-line-brass/30 bg-void">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 grid grid-cols-3 gap-1 opacity-25"
+        >
+          {heroCollage.map((src, i) => (
+            <div key={src} className={`relative ${i >= 3 ? "hidden sm:block" : ""}`}>
+              <Image
+                src={src}
+                alt=""
+                fill
+                loading="eager"
+                className="object-cover"
+                sizes="(max-width: 640px) 34vw, 34vw"
+              />
+            </div>
+          ))}
+        </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(10,9,8,0.55)_0%,rgba(10,9,8,0.85)_60%,rgba(10,9,8,0.97)_100%)]"
+        />
+        <div className="relative mx-auto max-w-6xl px-6 py-16 sm:py-24">
+          <Reveal>
+            <h1 className="max-w-3xl font-wordmark text-5xl font-bold tracking-tight text-bone sm:text-6xl">
+              Upcoming Events
+            </h1>
+            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-gold sm:text-base">
+              Workshops and networking events, nationwide.
+            </p>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-bone-soft">
+              Join us in person or online. Events are open to whichever
+              apprentice group they&apos;re designed for. Check the audience
+              tag on each listing.
+            </p>
+          </Reveal>
+        </div>
+      </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
         <RevealGroup className="grid gap-8 sm:grid-cols-2">

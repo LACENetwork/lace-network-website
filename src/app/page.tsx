@@ -4,6 +4,7 @@ import { SocialLinks } from "@/components/social-links";
 import { Hero } from "@/components/hero";
 import { SectionDots } from "@/components/section-dots";
 import { Testimonials, type Testimonial } from "@/components/testimonials";
+import { MomentsMarquee } from "@/components/moments-marquee";
 
 const lace = [
   {
@@ -139,6 +140,22 @@ export default function Home() {
             </RevealItem>
           ))}
         </RevealGroup>
+      </section>
+
+      <section aria-labelledby="moments" className="relative overflow-hidden border-t border-line-brass/20 py-20 sm:py-28">
+        <div className="mx-auto max-w-6xl px-6">
+          <Reveal className="max-w-2xl">
+            <h2 id="moments" className="font-wordmark text-3xl font-bold tracking-tight text-bone sm:text-4xl">
+              Moments From LACE Network
+            </h2>
+            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-gold sm:text-base">
+              See Us In Action.
+            </p>
+          </Reveal>
+        </div>
+        <div className="mt-12">
+          <MomentsMarquee />
+        </div>
       </section>
 
       <section aria-labelledby="who-its-for" className="relative overflow-hidden bg-charcoal py-20 sm:py-28">

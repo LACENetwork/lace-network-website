@@ -4,11 +4,11 @@ import { CaretRight, Clock, MapPin, Users } from "@phosphor-icons/react/dist/ssr
 import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 
 const heroCollage = [
-  "/gallery/collage-01.jpg",
+  "/gallery/collage-05.jpg",
   "/gallery/collage-02.jpg",
   "/gallery/collage-03.jpg",
   "/gallery/collage-04.jpg",
-  "/gallery/collage-05.jpg",
+  "/gallery/collage-01.jpg",
   "/gallery/collage-06.jpg",
 ];
 
@@ -113,7 +113,7 @@ export default function EventsPage() {
       <section className="relative overflow-hidden border-b border-line-brass/30 bg-void">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 grid grid-cols-3 gap-1 opacity-25"
+          className="pointer-events-none absolute inset-0 grid grid-cols-3 gap-1 opacity-45"
         >
           {heroCollage.map((src, i) => (
             <div key={src} className={`relative ${i >= 3 ? "hidden sm:block" : ""}`}>

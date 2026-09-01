@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { CalendarCheck } from "@phosphor-icons/react/dist/ssr";
 import { SectionDots } from "@/components/section-dots";
+import { SectionGlow } from "@/components/section-glow";
 
 const container: Variants = {
   hidden: {},
@@ -26,26 +27,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden border-b border-line-brass/30 bg-void">
-      <motion.div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-32 -top-32 h-[28rem] w-[28rem] rounded-full bg-gold/15 blur-3xl sm:h-[36rem] sm:w-[36rem]"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={
-          shouldReduceMotion
-            ? { opacity: 1, scale: 1 }
-            : { opacity: [1, 1, 0.15, 1], scale: [1, 1, 0.96, 1] }
-        }
-        transition={
-          shouldReduceMotion
-            ? { duration: 0.01 }
-            : {
-                duration: 16,
-                repeat: Infinity,
-                ease: "easeInOut",
-                times: [0, 0.625, 0.8125, 1],
-              }
-        }
-      />
+      <SectionGlow />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -left-40 bottom-0 h-[24rem] w-[24rem] rounded-full bg-brass/10 blur-3xl"

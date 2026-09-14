@@ -9,6 +9,8 @@ const STORAGE_KEY = "lace-newsletter-dismissed";
 
 export function NewsletterPopup() {
   const [visible, setVisible] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "submitted" | "error">("idle");
   const cardRef = useRef<HTMLDivElement>(null);
@@ -72,6 +74,8 @@ export function NewsletterPopup() {
         },
         body: JSON.stringify({
           Type: "Newsletter signup",
+          "First name": firstName,
+          "Last name": lastName,
           Email: email,
           _subject: "LACE Network newsletter signup",
         }),
@@ -143,28 +147,55 @@ export function NewsletterPopup() {
               opportunities, and the latest from LACE Network.
             </p>
 
-            <form
-              onSubmit={handleSubmit}
-              className="mt-6 flex items-center gap-2 rounded-full border border-line-brass/30 bg-void p-1.5 pl-5"
-            >
+            <form onSubmit={handleSubmit} className="mt-6 text-left">
+              <div className="grid grid-cols-2 gap-2">
+                <input
+                  type="text"
+                  required
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  placeholder="First name"
+                  aria-label="First name"
+                  tabIndex={visible ? 0 : -1}
+                  className="w-full rounded-full border border-line-brass/30 bg-void px-4 py-2.5 text-sm text-bone placeholder:text-bone-soft/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                />
+                <input
+                  type="text"
+                  required
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  placeholder="Last name"
+                  aria-label="Last name"
+                  tabIndex={visible ? 0 : -1}
+                  className="w-full rounded-full border border-line-brass/30 bg-void px-4 py-2.5 text-sm text-bone placeholder:text-bone-soft/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                />
+              </div>
+
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
+                aria-label="Email address"
                 tabIndex={visible ? 0 : -1}
-                className="w-full bg-transparent text-sm text-bone placeholder:text-bone-soft/50 focus:outline-none"
+                className="mt-2 w-full rounded-full border border-line-brass/30 bg-void px-4 py-2.5 text-sm text-bone placeholder:text-bone-soft/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
               />
+
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                aria-label="Subscribe"
                 tabIndex={visible ? 0 : -1}
-                className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold text-void transition-colors duration-fast hover:bg-gold-deep disabled:cursor-not-allowed disabled:opacity-60"
+                className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-4 py-2.5 text-sm font-semibold text-void transition-colors duration-fast hover:bg-gold-deep disabled:cursor-not-allowed disabled:opacity-60"
               >
+                {status === "submitting" ? "Subscribing..." : "Subscribe"}
                 <PaperPlaneRight size={16} weight="fill" aria-hidden="true" />
               </button>
+
+              <p className="mt-3 text-center text-xs leading-relaxed text-bone-soft/70">
+                By signing up, you agree to receive marketing emails and SMS
+                from LACE Network. You can unsubscribe at any time.
+              </p>
             </form>
 
             {status === "error" && (

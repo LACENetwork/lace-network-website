@@ -67,6 +67,24 @@ const allEvents = [
     ticketHref: "https://www.eventbrite.com/e/1996115888356?aff=oddtdtcreator",
     soldOut: true,
   },
+  {
+    title: "LACE Network: Apprenticeship Interview Masterclass",
+    weekday: "Thursday",
+    weekdayShort: "Thu",
+    day: "8",
+    month: "Oct",
+    year: "2026",
+    time: "5:00 – 8:00 PM",
+    startISO: "2026-10-08T17:00:00+01:00",
+    endISO: "2026-10-08T20:00:00+01:00",
+    location: "Barclays Eagle Labs, Manchester",
+    format: "In person",
+    audience: "Aspiring apprentices",
+    description:
+      "Prepare for apprenticeship interviews with practical advice on what employers look for, how to answer common questions, and how to present yourself with confidence.",
+    ticketHref: "https://www.eventbrite.co.uk/e/2001599375614?aff=oddtdtcreator",
+    soldOut: false,
+  },
 ];
 
 const events = allEvents.filter(isUpcoming);
@@ -84,7 +102,7 @@ const eventsJsonLd = events.map((event) => ({
     name: event.location,
     address: {
       "@type": "PostalAddress",
-      addressLocality: event.location,
+      addressLocality: "Manchester",
       addressCountry: "GB",
     },
   },

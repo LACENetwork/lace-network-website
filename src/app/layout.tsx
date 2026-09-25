@@ -43,10 +43,10 @@ export const metadata: Metadata = {
     url: "https://www.lacenetwork.com",
     images: [
       {
-        url: "/event-networking.jpg",
+        url: "/og-image.jpg",
         width: 1200,
-        height: 1200,
-        alt: "LACE Network apprentices at an outdoor networking event",
+        height: 630,
+        alt: "LACE Network",
       },
     ],
   },
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "LACE Network",
     description: siteDescription,
-    images: ["/event-networking.jpg"],
+    images: ["/og-image.jpg"],
   },
 };
 

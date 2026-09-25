@@ -30,7 +30,7 @@ const siteDescription =
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.lacenetwork.com"),
   title: {
-    default: "LACE Network",
+    default: "LACE Network | Supporting Apprentices At Every Stage",
     template: "%s | LACE Network",
   },
   description: siteDescription,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     siteName: "LACE Network",
-    title: "LACE Network",
+    title: "LACE Network | Supporting Apprentices At Every Stage",
     description: siteDescription,
     url: "https://www.lacenetwork.com",
     images: [
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LACE Network",
+    title: "LACE Network | Supporting Apprentices At Every Stage",
     description: siteDescription,
     images: ["/og-image.jpg"],
   },

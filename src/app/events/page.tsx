@@ -60,6 +60,7 @@ const allEvents = [
     startISO: "2026-08-27T16:00:00+01:00",
     endISO: "2026-08-27T18:00:00+01:00",
     location: "Manchester",
+    city: "Manchester",
     format: "In person",
     audience: "Aspiring apprentices",
     description:
@@ -78,11 +79,32 @@ const allEvents = [
     startISO: "2026-10-08T17:00:00+01:00",
     endISO: "2026-10-08T20:00:00+01:00",
     location: "Barclays Eagle Labs, Manchester",
+    city: "Manchester",
     format: "In person",
     audience: "Aspiring apprentices",
     description:
       "Prepare for apprenticeship interviews with practical advice on what employers look for, how to answer common questions, and how to present yourself with confidence.",
     ticketHref: "https://www.eventbrite.co.uk/e/2001599375614?aff=oddtdtcreator",
+    soldOut: false,
+  },
+  {
+    title: "LACE Network x Amazon: Apprenticeship Interview Masterclass",
+    weekday: "Tuesday",
+    weekdayShort: "Tue",
+    day: "1",
+    month: "Dec",
+    year: "2026",
+    time: "5:00 – 9:00 PM",
+    startISO: "2026-12-01T17:00:00+00:00",
+    endISO: "2026-12-01T21:00:00+00:00",
+    location: "Amazon, 1 Principal Place, London",
+    city: "London",
+    format: "In person",
+    audience: "Aspiring apprentices",
+    description:
+      "Prepare for apprenticeship interviews with practical advice on what employers look for, how to answer common questions, and how to present yourself with confidence.",
+    ticketHref:
+      "https://www.eventbrite.co.uk/e/lace-x-amazon-apprenticeship-interview-masterclass-tickets-2004949038546?aff=oddtdtcreator&keep_tld=true",
     soldOut: false,
   },
 ];
@@ -102,7 +124,7 @@ const eventsJsonLd = events.map((event) => ({
     name: event.location,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Manchester",
+      addressLocality: event.city,
       addressCountry: "GB",
     },
   },

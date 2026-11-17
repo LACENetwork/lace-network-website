@@ -100,7 +100,7 @@ const allEvents = [
     location: "Amazon, 1 Principal Place, London",
     city: "London",
     format: "In person",
-    audience: "Aspiring apprentices",
+    audience: "Students",
     description:
       "Prepare for apprenticeship interviews with practical advice on what employers look for, how to answer common questions, and how to present yourself with confidence.",
     ticketHref:
